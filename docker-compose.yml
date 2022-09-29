@@ -30,3 +30,12 @@ services:
       - "traefik.http.routers.enacit.tls=true"
       - "traefik.http.routers.enacit.rule=PathPrefix(`/`)"
       - "traefik.http.routers.enacit.rule=Host(`demo.epfl.ch`)"
+    volumes:
+      - demo_vol:/usr/share/nginx/html:ro
+
+volumes:
+  demo_vol:
+    driver_opts:
+      type: "nfs"
+      o: "addr=${NFS_SERVER:-localhost},nfsvers=4"
+      device: ":/"
