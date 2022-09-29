@@ -1,13 +1,14 @@
-# {YOUR-REPO-NAME} Contributing Guide
+# enac-web-hosting-dmz-2022 Contributing Guide
 
-Hi! Thanks for taking the time to contribute to {YOUR-REPO-NAME}.
+Hi! Thanks for taking the time to contribute to enac-web-hosting-dmz-2022.
 
-* You can contribute in many ways *
- - Join the [discussion](https://github.com/EPFL-ENAC/{YOUR-REPO-NAME}/discussions)
+_You can contribute in many ways_
 
+- Join the [discussion](https://github.com/EPFL-ENAC/enac-web-hosting-dmz-2022/discussions)
 
-* Before submitting your contribution, please make sure to take a moment and read through the following guidelines *
-- [Code of Conduct](https://github.com/EPFL-ENAC/{YOUR-REPO-NAME}/blob/main/CODE_OF_CONDUCT.md)
+* Before submitting your contribution, please make sure to take a moment and read through the following guidelines \*
+
+- [Code of Conduct](https://github.com/EPFL-ENAC/enac-web-hosting-dmz-2022/blob/main/CODE_OF_CONDUCT.md)
 - [Issue Reporting Guidelines](#issue-reporting-guidelines)
 - [Pull Request Guidelines](#pull-request-guidelines)
 - [Development Setup](#development-setup)
@@ -17,31 +18,37 @@ Hi! Thanks for taking the time to contribute to {YOUR-REPO-NAME}.
 
 ## Issue Reporting Guidelines
 
-- Always use [ issue templates ](https://github.com/EPFL-ENAC/{YOUR-REPO-NAME}/issues/new/choose)
+- Always use [ issue templates ](https://github.com/EPFL-ENAC/enac-web-hosting-dmz-2022/issues/new/choose)
 - If you don't find a corresponding issue template please use the template to ask a new template
 
 ## Pull Request Guidelines
 
 ### Timeline example
+
 1. - Create an issue (fix/feature/etc..)
 2. - Create branch from issue
-  - the issue's title should be what you expect your branch name to be
+
+- the issue's title should be what you expect your branch name to be
+
 3. - Checkout locally, push commits to github
 4. - Create pull-request from branch
 5. - Merge pull-request
-  - To avoid merge commit like this:
-     'Merge pull request #3 from EPFL-ENAC/2-bug-remove-ecoinvent-embodied-data
-  - Replace the github automatic merge commit message by the a conventional-changelog valid commit message usually a simple copy/paste from the pull-request title is enough
-  - see this [blog post](https://mokacoding.com/blog/better-merging-for-github-pull-requests/) for an example
+
+- To avoid merge commit like this:
+  'Merge pull request #3 from EPFL-ENAC/2-bug-remove-ecoinvent-embodied-data
+- Replace the github automatic merge commit message by the a conventional-changelog valid commit message usually a simple copy/paste from the pull-request title is enough
+- see this [blog post](https://mokacoding.com/blog/better-merging-for-github-pull-requests/) for an example
+
 6. - Issue is auto-close
 
 ### We Develop with Github
+
 We use github to host code, to track issues and feature requests, as well as accept pull requests.
 
 ### We Use [Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow),
 
 - All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow)). We actively welcome your pull requests:
+  Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow)). We actively welcome your pull requests:
 
 - If your pull request addresses an issue, link the issue so that issue stakeholders are aware of the pull request and vice versa.
 
@@ -81,7 +88,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 
 ## CSS
 
-- CSS code is following team standards. *stylelint*
+- CSS code is following team standards. _stylelint_
 - No hardcoded colors, font sizes, whitespace, breakpoints and z-indices.
   - _Always use design tokens instead._
 - No style overrides of any component library components.
@@ -97,10 +104,12 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
   - Line height (rem) - Because it needs to be relative to the font size. Unless you want to set a vertical rhythm and such.
 
 ## Python
+
 - We follow the pep8 and the python-guide writing style
   - https://docs.python-guide.org/writing/style/
 
 ### maybe todo ?
+
 1. Fork the repo and create your branch from `dev`.
 2. If you've added code that should be tested, add tests.
 3. If you've changed APIs or added breaking change, update the documentation and notify the users.
@@ -108,12 +117,12 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 5. Make sure your code lints.
 6. Issue that pull request!
 
-
 ### Recommendation for the pull request
 
 - Add screenshots or GIFs for any UI changes. This will help the person reviewing your code to understand what you’ve changed and how it works.
   - _Hint: use [Kap](https://getkap.co/) or [Licecap](https://www.cockos.com/licecap/) to record your screen._
 - If your team uses a particular template for pull requests, fill it. Otherwise at least make sure you have:
+
   - the user problem you are solving;
   - acceptance criteria of the ticket;
   - testing you have done or plan to do before release;
@@ -128,6 +137,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 - It's OK to have multiple small commits as you work on the PR - GitHub will automatically squash it before merging.
 
 - If adding a new feature:
+
   - Add accompanying test case.
   - Provide a convincing reason to add this feature. Ideally, you should open a suggestion issue first and have it approved before working on it.
   - Present your issue in the 'discussion' part of this repo
@@ -170,9 +180,8 @@ We also welcome financial contributions. Please contact us directly.
 
 ## Commit Lint
 
-We follow a commit message convention, to have consistent git messages. The goal is to increase readability and ease of contribution
-    - we use [commit-lint with the conventional-changelog extension](https://github.com/conventional-changelog/commitlint)
+We follow a commit message convention, to have consistent git messages. The goal is to increase readability and ease of contribution - we use [commit-lint with the conventional-changelog extension](https://github.com/conventional-changelog/commitlint)
 
 ## Credits
 
-Thank you to all the people who have already contributed to {YOUR-REPO-NAME} repository!
+Thank you to all the people who have already contributed to enac-web-hosting-dmz-2022 repository!
