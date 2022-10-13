@@ -21,12 +21,12 @@ services:
       - ${SSL_CERT_KEY:-./cert/certificate.key}:/cert/certificate.key
       - ${SSL_CERT_CRT:-./cert/certificate.crt}:/cert/certificate.crt
 
-  # on service for demo
-  demo:
-    image: nginx:alpine
+  # on service for https://bluecity.epfl.ch
+  bluecity:
+    build: hosts/bluecity.epfl.ch/
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.demo.tls=true"
-      - "traefik.http.routers.demo.rule=PathPrefix(`/`)"
-      - "traefik.http.routers.demo.rule=Host(`demo.epfl.ch`)"
+      - "traefik.http.routers.bluecity.tls=true"
+      - "traefik.http.routers.bluecity.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.bluecity.rule=Host(`bluecity.epfl.ch`)"
