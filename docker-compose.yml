@@ -30,3 +30,13 @@ services:
       - "traefik.http.routers.bluecity.tls=true"
       - "traefik.http.routers.bluecity.rule=PathPrefix(`/`)"
       - "traefik.http.routers.bluecity.rule=Host(`bluecity.epfl.ch`)"
+
+  # on service for https://enacvirtualtour.epfl.ch
+  enacvirtualtour:
+    build: hosts/enacvirtualtour.epfl.ch/
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.enacvirtualtour.tls=true"
+      - "traefik.http.routers.enacvirtualtour.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.enacvirtualtour.rule=Host(`enacvirtualtour.epfl.ch`)"
