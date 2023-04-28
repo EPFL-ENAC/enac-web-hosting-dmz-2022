@@ -40,3 +40,5 @@ services:
       - "traefik.http.routers.enacvirtualtour.tls=true"
       - "traefik.http.routers.enacvirtualtour.rule=PathPrefix(`/`)"
       - "traefik.http.routers.enacvirtualtour.rule=Host(`enacvirtualtour.epfl.ch`)"
+    volumes:
+      - /mnt/enac1files_ENAC-IT_IT2__Temp_nd/:/data
