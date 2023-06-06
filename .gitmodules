@@ -1,3 +1,6 @@
 [submodule "hosts/enacit1.epfl.ch/enacit1-ideas-mineur-form"]
 	path = hosts/enacit1.epfl.ch/enacit1-ideas-mineur-form
 	url = git@github.com:EPFL-ENAC/enacit1-ideas-mineur-form.git
+[submodule "hosts/enacit1.epfl.ch/enacit1-reserv-vehicules"]
+	path = hosts/enacit1.epfl.ch/enacit1-reserv-vehicules
+	url = git@github.com:EPFL-ENAC/enacit1-reserv-vehicules.git
