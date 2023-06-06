@@ -6,7 +6,7 @@ services:
       - "--providers.file.directory=/configuration/"
       - "--entrypoints.web.address=:80"
       - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.exposedByDefault=false"
       - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
       - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
       - "--entrypoints.web.http.redirections.entryPoint.permanent=true"
@@ -21,7 +21,7 @@ services:
       - ${SSL_CERT_KEY:-./cert/certificate.key}:/cert/certificate.key
       - ${SSL_CERT_CRT:-./cert/certificate.crt}:/cert/certificate.crt
 
-  # on service for https://bluecity.epfl.ch
+  # https://bluecity.epfl.ch
   bluecity:
     build: hosts/bluecity.epfl.ch/
     restart: unless-stopped
@@ -30,3 +30,16 @@ services:
       - "traefik.http.routers.bluecity.tls=true"
       - "traefik.http.routers.bluecity.rule=PathPrefix(`/`)"
       - "traefik.http.routers.bluecity.rule=Host(`bluecity.epfl.ch`)"
+
+  # https://enacit1.epfl.ch
+  enacit1-redirect:
+    build: https://github.com/EPFL-ENAC/hosting-enacit1.git
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.enacit1-redirect.tls=true"
+      - "traefik.http.routers.enacit1-redirect.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.enacit1-redirect.rule=Host(`enacit1.epfl.ch`)"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
