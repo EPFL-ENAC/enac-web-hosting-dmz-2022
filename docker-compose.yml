@@ -33,7 +33,7 @@ services:
 
   # https://enacit1.epfl.ch
   enacit1-redirect:
-    build: https://github.com/EPFL-ENAC/hosting-enacit1.git
+    build: hosts/enacit1.epfl.ch/
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -43,3 +43,24 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
+
+  # https://enacit1.epfl.ch/ideas-mineur-form
+  # https://enacit1.epfl.ch/charte2010
+  enacit1-ideas-mineur-app:
+    build: hosts/enacit1.epfl.ch/enacit1-ideas-mineur-form
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.enacit1-ideas-mineur-app.tls=true"
+      - "traefik.http.routers.enacit1-ideas-mineur-app.rule=(Host(`enacit1.epfl.ch`) && PathPrefix(`/ideas-mineur-form`))"
+      - "traefik.http.routers.enacit1-ideas-mineur-app.service=enacit1-ideas-mineur-app-service"
+      - "traefik.http.services.enacit1-ideas-mineur-app-service.loadbalancer.server.port=80"
+      - "traefik.http.routers.enacit1-charte2010.tls=true"
+      - "traefik.http.routers.enacit1-charte2010.rule=(Host(`enacit1.epfl.ch`) && PathPrefix(`/charte2010`))"
+      - "traefik.http.routers.enacit1-charte2010.service=enacit1-charte2010-service"
+      - "traefik.http.services.enacit1-charte2010-service.loadbalancer.server.port=80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - hosts/enacit1.epfl.ch/enacit1-ideas-mineur-form/.env
