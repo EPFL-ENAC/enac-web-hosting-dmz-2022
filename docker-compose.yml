@@ -30,6 +30,8 @@ services:
       - "traefik.http.routers.bluecity.tls=true"
       - "traefik.http.routers.bluecity.rule=PathPrefix(`/`)"
       - "traefik.http.routers.bluecity.rule=Host(`bluecity.epfl.ch`)"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
 
   # https://enacit1.epfl.ch
   enacit1-redirect:
