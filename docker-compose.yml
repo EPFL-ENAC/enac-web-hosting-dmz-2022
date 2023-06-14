@@ -92,6 +92,16 @@ services:
       - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.env
       - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.secret.env
 
+  enacit1-reserv-vehicules-cron:
+    build: hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/cron
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.env
+      - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.secret.env
+
+
 volumes:
   enacit1-reserv-vehicules-mysql-data:
     driver: local
