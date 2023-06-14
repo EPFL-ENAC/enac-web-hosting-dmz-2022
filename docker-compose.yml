@@ -44,7 +44,6 @@ services:
       - "traefik.http.routers.enacit1-redirect.rule=Host(`enacit1.epfl.ch`)"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
 
   # https://enacit1.epfl.ch/ideas-mineur-form
   # https://enacit1.epfl.ch/charte2010
@@ -63,7 +62,6 @@ services:
       - "traefik.http.services.enacit1-charte2010-service.loadbalancer.server.port=80"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
     env_file:
       - hosts/enacit1.epfl.ch/enacit1-ideas-mineur-form/.env
 
@@ -79,7 +77,6 @@ services:
       - "traefik.http.services.enacit1-reserv-vehicules-service.loadbalancer.server.port=80"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
     env_file:
       - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.env
       - hosts/enacit1.epfl.ch/enacit1-reserv-vehicules/.secret.env
