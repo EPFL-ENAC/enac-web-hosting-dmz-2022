@@ -3,3 +3,4 @@
 ENAC's web hosting in EPFL's DMZ
 
 - https://bluecity.epfl.ch
+- https://enacit1.epfl.ch
