@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   # https://enacit1.epfl.ch
   enacit1-redirect:
