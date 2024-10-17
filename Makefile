@@ -4,21 +4,18 @@ GID := $(shell id -g)
 run:
 	docker compose \
 	  -f docker-compose.yml \
-	  -f docker-compose-bluecity.yml \
 	  -f docker-compose-enacit1.yml \
 	  up --build -d
 
 down:
 	docker compose \
 	  -f docker-compose.yml \
-	  -f docker-compose-bluecity.yml \
 	  -f docker-compose-enacit1.yml \
 	  down
 
 logs:
 	docker compose \
 	  -f docker-compose.yml \
-	  -f docker-compose-bluecity.yml \
 	  -f docker-compose-enacit1.yml \
 	  logs -f
 
